@@ -1,0 +1,74 @@
+{% extends 'admin_ui.html' %}
+{% block title %}Add Product{% endblock title %}
+{% block content %}
+<hr>
+    <form action="{% url 'a_product' s_un %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% if prod_stat == True %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Product Added successfully </strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% elif prod_stat == False %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Oops! Wrong username</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endif %}
+        <p class="login"><i class="fas fa-gift" style="font-size:80px;"></i></br></br><b>ADD PRODUCT</b></p>
+        <div class="center">
+	<table align="center">
+	<tr>
+	<td>
+            <i class="far fa-user-circle" style="font-size:30px;"></i>
+	</td><td>
+            <input type="email" name="shop_un" placeholder="Enter username" class="g" required>
+	</td>
+	</tr><tr>
+	<td>
+            <i class="fa fa-pie-chart" style="font-size:30px;"></i>
+	</td><td>            
+	    <input type="text" name="prod_cat" placeholder="Enter product category" class="g" required>
+	</td>
+	</tr><tr>
+	<td> 
+            <i class="fas fa-gift" style="font-size:30px;"></i>
+	</td><td>
+            <input type="text" name="name" placeholder="Enter product name" class="g" required>
+	</td>
+	</tr><tr>
+	<td> 
+            <i class="far fa-edit" style="font-size:30px;"></i>
+	</td><td> 
+            <input type="textarea" name="description" placeholder="Enter product description" required style="height: 7em; width: 16em;background-color:lightyellow;" >
+	</td>
+	</tr><tr> 
+	<td>
+            <i class="fa fa-inr" style="font-size:30px;"></i>
+	</td><td> 
+            <input type="number" name="cost" placeholder="Enter product cost" class="g" required>
+	</td>
+	</tr><tr>
+	<td> 
+            <i class="	fas fa-balance-scale" style="font-size:30px;"></i>
+	</td><td> 
+            <input type="number" name="qtn" placeholder="Default quantity to be diaplayed to user" class="g" required>
+	</td>
+	</tr><tr> 
+	<td>
+            <i class="far fa-file-photo-o" style="font-size:30px;"></i>
+	</td><td> 
+            <input type="file" name="image" required>
+	</td>
+	</tr><tr>
+	<td> 
+            <i class="fa fa-cubes" style="font-size:30px;">
+	</td><td> 
+            <input type="text" name="note" placeholder="Stock details" class="g" required>
+	</td>
+	</tr>
+	</table> 
+        </div>
+        <button type="submit" class='success'>Add Product <i class='fas fa-feather-alt'></i></button>
+    </form>
+{% endblock content %}

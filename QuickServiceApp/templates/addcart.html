@@ -1,0 +1,39 @@
+{% extends 'homepage.html' %}
+{% block title %}Your Cart{% endblock %}
+    {% block content %}
+    <br>
+    {% for prod in products%}
+        {% for cart in item %}
+                {% if prod.shop_un == cart.p_s_un and prod.prod_cat == cart.p_c_n and prod.name == cart.p_name %}
+                    <section class="product" style="border: solid 2px; border-radius: 15px; box-shadow: 3px 2px 3px 2px lightgray; text-indent: 25px; background-color: antiquewhite; margin-right: 4px;">
+                        <table style="width: 50%;">
+                            <tr style="text-align:left">
+                                <td style="width: 40%;"><img src="{{prod.image.url}}" class="img-fluid" alt="Responsive image" style="height: 200px; border-radius: 15px"></td>
+                                <td style="font-size:48px; margin-left:0%">{{prod.name}}</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 50%;">
+                                    <div style="text-indent: 10px;"><br>
+                                        <p>
+                                            Quantity :
+                                            <input type="number" value="{{cart.p_qtn}}" class="qtn" style="width: 35px; font-size: medium;background: transparent; border-top: none; border-left: none; border-right: none; text-align: end;">
+                                            <p>Cost per Quantity:Rs<input type="text" value="{{prod.cost}}" style=" border: none; background: transparent;" readonly></p>
+                                        </p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <a href="{% url 'del_p' cart.id ck %}"><button class="discard">Remove <i class='fa fa-close' ></i></button></a>
+                                </td>
+                            </tr>
+                        </table><br>
+                    </section><br>
+                {% endif %}
+            
+        {% endfor %}
+    {% endfor %}
+    <hr style="color:snow; height: 3px;">
+    <h1>Total: {{sum}}</h1>
+    <section><hr>
+        <a href="http://127.0.0.1:8000/conf_ord/{{ck}}" style="text-decoration: none;"><button type="submit" class="success" style="margin: 0 auto; display:block;">Procede to Checkout <i class='fas fa-shopping-bag' style='font-size:24px'></i></button></a><hr>
+    </section>
+    {% endblock %}

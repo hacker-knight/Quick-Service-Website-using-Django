@@ -1,0 +1,27 @@
+{% extends 'homepage.html' %}
+{% block title %}Your History{% endblock %}
+    {% block content %}
+    <br>
+    {% for order in orders %}
+    {% for product in products %}
+    {% if product.shop_un == order.p_s_un and product.name == order.p_name and product.prod_cat == order.p_c_n and order.p_deliver == Received %}
+    <section class="product" style="border: solid 2px; border-radius: 15px; box-shadow: 3px 2px 3px 2px lightgray; text-indent: 25px; background-color: antiquewhite; margin-right: 4px;">
+        <table style="width: 50%;">
+            <tr style="text-align:left">
+                <td style="width: 40%;"><img src="{{product.image.url}}" class="img-fluid" alt="Responsive image" style="height: 200px; border-radius: 5px"></td>
+                <td style="margin-left:0%"><p style="font-size:48px;">{{order.p_name}}</p>Description: {{product.description}}</td>
+            </tr>
+        </table>
+        <div><br>
+            <p>
+                Quantity
+                <input type="number" value="{{order.p_qtn}}" class="qtn" style="width: 35px; font-size: medium;" readonly><br>
+                Order status : {{order.p_deliver}}
+                <p ></p>
+            </p>
+        </div>
+    </section><br>
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+    {% endblock %}

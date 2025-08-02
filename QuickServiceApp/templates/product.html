@@ -1,0 +1,53 @@
+{% extends 'homepage.html' %}
+{% load static %}
+{% block title %}Products
+{% endblock title %}
+
+{% block content %}
+<br>
+<form action="{% url 'add_to_cart' ck %}" method="POST" name="prod" onsubmit="return sub()">
+{% csrf_token %}
+    {% for product in products %}
+    {% if prod == product.name %}
+    <p style='color: white;'>
+    {% if shop == product.shop_un %}
+    <input type="text" name="p_s_un" value="{{product.shop_un}}" readonly hidden>
+    <input type="text" name="client" value="{{ck}}" readonly hidden>
+    <input type="number" name="p_deliver" value="Cart" readonly hidden>
+    <select name="p_deliver" hidden>
+        <option value="" >---------</option>
+        <option value="Cart" selected>Cart</option>
+        <option value="Ordered">Ordered</option>
+        <option value="Received">Received</option>
+    </select>
+    <div style="width: 45%; float:left">
+        <img src="{{product.image.url}}" class="img-fluid" alt="Responsive image" style="width:fit-content; margin: 0 auto; display: block; border-radius: 16px;">   
+    </div>
+    <div style="width: 54%; float:right; padding-left: 10px;">
+        <h1 ><input type="text" name="p_name" value="{{product.name}}" style=" border: none;" readonly></h1>
+        <p style="padding-right: 10em;">
+            Category: <input type="text" name="p_c_n" value="{{product.prod_cat}}"style=" border: none;" readonly><br>
+            Description:{{product.description}} <br>
+            Note:{{product.note}} <br>
+            Quantity: <input type="number" name="p_qtn" value="{{product.qtn}}" style="width: 35px; font-size: medium;"><br>
+            Cost: <input type="text" name="p_cost" value="{{product.cost}}"style=" border: none;" readonly><br>
+        </p>
+        <button type="submit" class="success" style="font-size:20px;">Cart <i class="fas fa-shopping-cart" ></i></button>
+    </div>
+    {% else %}{% endif %}
+    {% else %}{% endif %}
+    {% endfor %}
+</form>
+<script>
+    function sub() {
+        var qt=document.forms["prod"]["p_qtn"].value;
+        var c=document.forms["prod"]["p_cost"].value;
+        if(qt>1){
+            c=c*qt;
+            document.prod.p_cost.value = c;
+        }
+        return true;
+    }
+</script>
+
+{% endblock  %}

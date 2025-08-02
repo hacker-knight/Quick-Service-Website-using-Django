@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Us</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+button::after{
+  content: none;
+}
+button:hover::after{
+  content: ':  7506175954';
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid"><h4><b>Quick Service</b></h4>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="//127.0.0.1:8000/home/{{ck}}">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="http://127.0.0.1:8000/cart/{{ck}}">Cart</a></li>
+                        <li><a class="dropdown-item" href="http://127.0.0.1:8000/track/{{ck}}">Order</a></li>
+                        <li><a class="dropdown-item" href="http://127.0.0.1:8000/history/{{ck}}">History</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="http://127.0.0.1:8000">Sign out</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="http://127.0.0.1:8000/about/{{ck}}" tabindex="-1" style="color: #5f6f80;">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="about-section" style="font-weight: 900;">
+  <h1>About Us Page</h1>
+  <p><h2>Our Mission</h2></p>
+  <p><h3>For consumers:</h3></p>
+  <p style="margin-left: 60px; margin-right: 60px;">
+            In this pandemic we all have learnt the importance of digital means.We all have been in the situation were in the lockdown we had
+        to go out to bring our essential stuff from our local shops with no other option which puts us in a thought that why can’t we get 
+        that online too? And why just restrict it to the lockdown period only? In order to develop our country our prime minister 
+        Shri Narendra Modi himself is trying to transform India into a digitally empowered society and knowledge economy by the means of 
+        digital India. So let us also take a step forth and be a part of this campaign.
+    </p>
+    <p><h3>For entrepreneurs:</h3></p>
+    <p style="margin-left: 60px; margin-right: 60px;">
+            We all are affected in the lockdown where people prefer online shopping rather than coming to shop to purchase. It has been 
+        observed that now a days lockdown or no, people prefer online shopping rather than going to stores. This has affected a lot of 
+        people and many had to even shut down their shops due to losses. This has made all small-scale entrepreneurs to think a way out 
+        of this situation and increase the sale. We would say why run away from online modes it is time to evolve your methods and be a 
+        part of digital India. Many of you think how to bring your shop online but, all of you have the same question that is how?
+    </p>
+    <p style="margin-left: 60px; margin-right: 60px;">
+            Do not worry we have a common solution for consumers as well as entrepreneurs. Our website connects consumers to the local 
+        stores to buy and sell stuff online with home delivery option. 
+    </p>
+    <h1>How it Works</h1>
+    <p><h3>Shops:</h3></p>
+    <p style="margin-left: 60px; margin-right: 60px;">
+        Local shops can register on our website and add the information of their products. When a consumer places order it will be 
+        visible as soon as you log into your account along with the consumer address, name and contact number. For payment we have cash 
+        on delivery. When a consumer receives the order that order will disappear from the website.
+    </p>
+    <p><h3>Consumers:</h3></p>
+    <p style="margin-left: 60px; margin-right: 60px;">
+        When you register into our website the pin-code that you enter will be used to show you the shops in your locality distributed 
+        category wise for your convenience. When you will view a particular store, you will be able to see all the available products 
+        listed category wise and the map of that particular store will be available if provided by the shop. You can click on the 
+        product you want to purchase and the details of that product will be available along with a add to cart option. After placing 
+        order, you can view that in orders option where on receiving a delivery you need to click on received button to inform that you 
+        have received your product always remember to do this step as doing this will verify the shop that you have received the order. 
+        In the navigation bar you can access your cart, previous orders placed, orders which are yet to be delivered and a sign out 
+        option.
+    </p>
+</div>
+
+<h2 style="text-align:center">Our Founders</h2>
+{% load static %}
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'Adarsh.jpeg' %}" alt="" style="width:100%">
+      <div class="container">
+        <h2>Adarsh Nair</h2>
+        <p class="title">Student</p>
+        <p>SE Comps,<br>Universal college of Engineering </p>
+        <p>adarsh@example.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'Isha.jpg' %}" alt="" style="width:100%">
+      <div class="container">
+        <h2>Isha Panchal</h2>
+        <p class="title">Student</p>
+        <p>SE Comps,<br>Universal college of Engineering </p>
+        <p>isha@example.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'Abhishek.jpeg' %}" alt="" style="width:100%">
+      <div class="container">
+        <h2>Abhishek Patra</h2>
+        <p class="title">Student</p>
+        <p>SE Comps,<br>Universal college of Engineering </p>
+        <p>abhishek@example.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

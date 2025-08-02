@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css'>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+
+        <title>{% block title %}Home Page{% endblock %}</title>
+        <style>
+            .headder{
+                color: darkgoldenrod;
+            }
+            .animate{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            #shop{
+                margin-top: 60px;
+                width: 50%;
+                height: 30px;
+                align-self: center;
+                font-size: large;
+            }
+            .animate{
+                transition: 2s;
+                animation-name: bgcolour;
+                animation-direction: alternate-reverse;
+                animation-duration: 10s;
+                animation-fill-mode: forwards;
+                animation-iteration-count: infinite;
+                animation-play-state: running;
+                animation-timing-function: ease-in-out;
+            }
+            @keyframes bgcolour {
+                0%{
+                    background: rgb(0, 255, 255);
+                }
+                50%{
+                    background: greenyellow;
+                }
+                100%{
+                    background: rgb(0, 255, 255);
+                }
+            }
+            .animename{
+                text-align: center;
+                font-size: 63px;
+                height: 40%;
+                width: 100%;
+                padding: 10px;
+            }
+            .storebody{        
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-evenly;
+                padding: 24px;
+            }
+            .shop{
+                background-color: bisque;
+                text-align: center;
+                padding: 65px;
+                margin: 10px 12px;
+                border: 2px solid;
+                border-radius: 15px;
+                margin-top: 15px;
+                box-sizing: border-box;
+                padding-right: 54px;
+                padding-left: 54px;
+                box-shadow: 0px 0px 10px 2px grey;
+            }
+            .success {
+                width:max-content;
+                background-color:black;
+                opacity:0.5;
+                padding:8px;
+                font-family:Raleway;
+                margin:10px;
+                border-color:black;
+                font-size:15px;
+                outline:none;
+                transition:0.3s;
+                font-weight:bold;
+                color:white;
+            }
+            .success:hover {
+                background-color:green;
+                border-color:green;
+                border-style:solid;
+                opacity:0.5;
+            }
+            .discard{
+                width:max-content;
+                background-color:black;
+                opacity:0.5;
+                padding:8px;
+                font-family:Raleway;
+                margin:10px;
+                border-color:black;
+                font-size:15px;
+                outline:none;
+                transition:0.3s;
+                font-weight:bold;
+                color:white;
+            }
+            .discard:hover{
+                background-color:red;
+                border-color:red;
+                border-style:solid;
+                opacity:0.5;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid"><h4><b>Quick Service</b></h4>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="//127.0.0.1:8000/home/{{ck}}">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="http://127.0.0.1:8000/cart/{{ck}}">Cart</a></li>
+                                <li><a class="dropdown-item" href="http://127.0.0.1:8000/track/{{ck}}">Order</a></li>
+                                <li><a class="dropdown-item" href="http://127.0.0.1:8000/history/{{ck}}">History</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="http://127.0.0.1:8000">Sign out</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="http://127.0.0.1:8000/about/{{ck}}" tabindex="-1" style="color: #5f6f80;">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        {% block content %}
+        <section class="animate">
+            <p class="animename">Quick<br>
+            Service</p>
+        </section>
+        {% for s in shops %}
+        {% if user.pin == s.pin %}
+            <h1 class="mainhead">{{s.s_cat}}</h1>
+        {% for shop in shops %}
+        {% if shop.s_cat == s.s_cat %}
+        <div>
+        </div>
+        <section class="storebody">
+            <a href="http://127.0.0.1:8000/shop/{{shop.uname}}/{{ck}}" style="color:black; text-decoration: none;"><div class="shop"><strong>{{shop.shop_name}}</strong></div></a>
+        </section>
+
+        {% endif %}
+        {% endfor %}
+        <hr>
+        {% endif %}
+        {% endfor %}
+
+        {% endblock %}
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    </body>
+</html>

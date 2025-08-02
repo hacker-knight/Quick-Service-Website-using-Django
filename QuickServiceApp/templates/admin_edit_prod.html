@@ -1,0 +1,75 @@
+{% extends 'admin_ui.html' %}
+{% block title %}Edit Product{% endblock title %}
+{% block content %}
+<hr>
+    <form action="{% url 'edit_prod' s_un ok %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% if prod_stat == True %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Product Edited successfully </strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% elif prod_stat == False %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Oops! Wrong username</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endif %}
+        <p class="login"><i class="fas fa-gift" style="font-size:80px;"></i></br></br><b>EDIT PRODUCT</b></p>
+        <div class="center">
+	<table align="center">
+	<tr>
+	<td>
+            <i class="far fa-user-circle" style="font-size:30px;"></i>
+	</td><td>
+            <input type="email" name="shop_un" placeholder="Enter username" class="g" required value="{{product.shop_un}}">
+	</td>
+	</tr><tr>
+	<td>
+            <i class="fa fa-pie-chart" style="font-size:30px;"></i>
+	</td><td>            
+	    <input type="text" name="prod_cat" placeholder="Enter product category" class="g" required value="{{product.prod_cat}}">
+	</td>
+	</tr><tr>
+	<td> 
+            <i class="fas fa-gift" style="font-size:30px;"></i>
+	</td><td>
+            <input type="text" name="name" placeholder="Enter product name" class="g" required value="{{product.name}}">
+	</td>
+	</tr><tr>
+	<td> 
+            <i class="far fa-edit" style="font-size:30px;"></i>
+	</td><td> 
+            <input type="textarea" name="description" placeholder="Enter product description" required value="{{product.description}}" style="height: 7em; width: 16em;background-color:lightyellow;" >
+	</td>
+	</tr><tr> 
+	<td>
+            <i class="fa fa-inr" style="font-size:30px;"></i>
+	</td><td> 
+            <input type="number" name="cost" placeholder="Enter product cost" class="g" required value="{{product.cost}}">
+	</td>
+	</tr><tr>
+	<td> 
+            <i class="	fas fa-balance-scale" style="font-size:30px;"></i>
+	</td><td> 
+            <input type="number" name="qtn" placeholder="Default quantity to be diaplayed to user" class="g" required value="{{product.qtn}}">
+	</td>
+	</tr><tr> 
+	<td>
+            <i class="far fa-file-photo-o" style="font-size:30px;"></i>
+	</td><td> file chosen:<a href="{{product.image.url}}" >{{product.image.url}}</a>
+            <input type="file" name="image" value="{{product.image.url}}">
+	</td>
+	</tr><tr>
+	<td> 
+            <i class="fa fa-cubes" style="font-size:30px;">
+	</td><td> 
+            <input type="text" name="note" placeholder="Stock details" class="g" required value="{{product.note}}">
+	</td>
+	</tr>
+	</table> 
+        </div>
+        <button type="submit" class="success">Edit Product <i class='fas fa-feather-alt'></i></button>
+    </form>
+	<a href="http://127.0.0.1:8000/admin_del_p/{{s_un}}/{{ok}}"><button type="submit" class="discard">Remove <i class='fa fa-close' ></i></button></a>
+{% endblock content %}

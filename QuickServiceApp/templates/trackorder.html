@@ -1,0 +1,41 @@
+{% extends 'homepage.html' %}
+{% block title %}Order{% endblock %}
+{% block content %}
+<br>
+    {% for order in orders %}
+    {% for product in products %}
+    {% if product.shop_un == order.p_s_un and product.name == order.p_name and product.prod_cat == order.p_c_n and order.p_deliver == Ordered %}
+    <section class="product" style="border: solid 2px; border-radius: 15px; box-shadow: 3px 2px 3px 2px lightgray; text-indent: 25px; background-color: antiquewhite; margin-right: 15px; margin-left: 10px">
+        <table style="width: 50%;">
+            <tr style="text-align:left">
+                <td style="width: 40%;">
+                
+                <img src="{{product.image.url}}" class="img-fluid" alt="Responsive image" style="height: 200px; border-radius: 5px">
+                
+                
+                </td>
+                <td style="font-size:48px; margin-left:0%">{{order.p_name}}</td>
+            </tr>
+        </table>
+        <div style="margin: 7px;">
+            <h1>Order Status</h1>
+            <li><b>Delivered : No</b></li><br>
+            <h3>Cost: {{order.p_cost}}</h3>
+            <h3>Qtn: {{order.p_qtn}}</h3>
+            <form action="{% url 'sub_p' ck order.id %}" method="POST">
+                {% csrf_token %}
+                <select name="p_deliver" hidden>
+                    <option value="">---------</option>
+                    <option value="Cart">Cart</option>
+                    <option value="Ordered">Ordered</option>
+                    <option value="Received" selected>Received</option>
+                </select>
+                <button type="submit" class="success" style="margin: 0 auto; display:block;">Received <i class="fas fa-shipping-fast"></i></button>
+            </form>
+        </div>
+    </section><br>
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+    <br>
+    {% endblock  %}

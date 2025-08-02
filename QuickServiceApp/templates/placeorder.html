@@ -1,0 +1,14 @@
+{% extends 'homepage.html' %}
+{% block title %}Place Order{% endblock %}
+<!DOCTYPE html>
+{% block content %}
+<br><h1 style="text-align:center;">Conformation form</h1><hr>
+    <form action="" method="post" style='text-align:center'>
+        {% csrf_token %}
+        {{ formset.management_form }}
+        {% for form in formset %}
+        {{form}}<hr>
+        {% endfor %}
+        <button type="submit" class="success" style="margin: 0 auto; display: block">Submit <i class='fas fa-cloud-upload-alt'></i></button>
+    </form>
+{% endblock %}
