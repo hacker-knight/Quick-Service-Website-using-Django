@@ -88,19 +88,3 @@ This platform bridges the gap between **local trust** and **digital convenience*
 ## 🔐 Admin Credentials (for demo)
 
 > Update with your demo credentials if needed, or remove this section before public release.
-
-## 📈 Future Improvements
-
-- Payment gateway integration
-- Location-based search and delivery radius logic
-- Reviews and ratings
-- Email and SMS notifications
-- Progressive Web App (PWA) version for mobile
-
-## 📃 License
-
-This project is open-source and available under the [MIT License](LICENSE).
-
----
-
-Made with ❤️ to support local businesses.
